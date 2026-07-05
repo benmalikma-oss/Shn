@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Brand</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1c1c;
+    --muted:#5f5f5f;
+    --accent:#e0a542;
+    --accent-dark:#c98f2e;
+    --green:#2f9e6e;
+    --card:#ffffff;
+    --overlay-top: rgba(10,10,10,.55);
+    --overlay-bottom: rgba(10,10,10,.75);
+    --maxw:720px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:#111;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+
+  .page{max-width:var(--maxw);margin:0 auto;position:relative;}
+
+  /* ============================================
+     HERO IMAGE — replace the background-image url
+     below with your own photo when ready.
+     ============================================ */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background-image:
+      linear-gradient(to bottom, var(--overlay-top), var(--overlay-bottom)),
+      url('https://i.postimg.cc/C5R4FdhT/AGT5E7UPIVOA3PPZGBJJRNV5E4.jpg');
+    background-size:cover;
+    background-position:center;
+    padding:60px 24px 40px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .brand-title{
+    font-family:'Playfair Display',serif;
+    font-weight:800;
+    letter-spacing:10px;
+    font-size:2.3rem;
+    color:#fff;
+    text-align:center;
+    margin:20px 0 10px;
+  }
+  .brand-underline{
+    width:60px;
+    height:3px;
+    background:var(--accent);
+    margin:0 auto 28px;
+    border-radius:2px;
+  }
+  .hero-subtitle{
+    color:#f2f2f2;
+    text-align:center;
+    font-size:1.15rem;
+    max-width:480px;
+    margin:0 auto 30px;
+  }
+  .hero-subtitle .highlight{
+    color:var(--accent);
+    font-weight:700;
+  }
+
+  /* Highlight card */
+  .card{
+    background:var(--card);
+    border-radius:18px;
+    padding:24px 22px;
+    max-width:480px;
+    width:100%;
+    margin:0 auto 20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+  }
+  .card h2{
+    font-family:'Playfair Display',serif;
+    font-size:1.2rem;
+    margin:0 0 10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .card h2 .ic{color:var(--green);font-size:1.2rem;}
+  .card p{color:var(--muted);font-size:.95rem;margin:0 0 16px;}
+  .card p .num{color:var(--green);font-weight:700;}
+
+  .progress-track{
+    width:100%;
+    height:8px;
+    background:#ece7dd;
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:10px;
+  }
+  .progress-fill{
+    height:100%;
+    width:70%; /* adjust as needed */
+    background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+    border-radius:6px;
+  }
+  .progress-caption{
+    text-align:right;
+    font-size:.85rem;
+    color:var(--muted);
+  }
+
+  .cta-btn{
+    display:block;
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+    color:#fff;
+    border:none;
+    border-radius:14px;
+    padding:18px 20px;
+    font-size:1.05rem;
+    font-weight:700;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(224,165,66,.35);
+  }
+  .cta-note{
+    text-align:center;
+    color:#eee;
+    font-size:.8rem;
+    font-style:italic;
+    margin:14px 0 10px;
+  }
+
+  /* How it works section */
+  .section-title{
+    font-family:'Playfair Display',serif;
+    color:#fff;
+    text-align:center;
+    font-size:1.6rem;
+    font-weight:800;
+    margin:36px 0 24px;
+  }
+
+  .steps{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    padding:0 0 40px;
+  }
+  .step{
+    background:var(--card);
+    border-radius:16px;
+    padding:18px 18px;
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+  }
+  .step .icon{
+    width:44px;height:44px;
+    flex:0 0 44px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.2rem;
+  }
+  .step:nth-child(1) .icon{background:#dff3e8;color:var(--green);}
+  .step:nth-child(2) .icon{background:#fbeed9;color:var(--accent-dark);}
+  .step:nth-child(3) .icon{background:#fbe1ea;color:#c0447a;}
+  .step h3{
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem;
+    margin:0 0 4px;
+  }
+  .step p{
+    margin:0;
+    color:var(--muted);
+    font-size:.9rem;
+  }
+
+  .final-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:#fff;
+    color:var(--ink);
+    border-radius:14px;
+    padding:18px 20px;
+    font-weight:700;
+    font-size:1.05rem;
+    margin:0 0 50px;
+    cursor:pointer;
+  }
+
+  /* Responsive */
+  @media (min-width:640px){
+    .brand-title{font-size:2.8rem;letter-spacing:14px;}
+    .hero-subtitle{font-size:1.3rem;}
+    .section-title{font-size:1.9rem;}
+  }
+  @media (min-width:900px){
+    :root{--maxw:960px;}
+    .hero{
+      border-radius:0 0 32px 32px;
+      padding:80px 60px 60px;
+    }
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      padding:0 60px 60px;
+    }
+    .card{margin-bottom:24px;}
+    .cta-btn{max-width:520px;}
+  }
+  @media (max-width:360px){
+    .brand-title{font-size:1.8rem;letter-spacing:6px;}
+    .hero{padding:40px 16px 30px;}
+    .card{padding:18px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="hero">
+
+    <!-- Brand name placeholder — replace with your logo/name -->
+    <h1 class="brand-title">SHEIN</h1>
+    <div class="brand-underline"></div>
+
+    <p class="hero-subtitle">
+      We're looking for people to review SHEIN products in your area and receive
+      <span class="highlight">a $750 gift card!</span>
+    </p>
+
+    <div class="card">
+      <h2><span class="ic">$</span> Earning Opportunity</h2>
+      <p>Our reviewers have earned over <span class="num">$2.4 million</span> in gift cards this year alone!</p>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+      <div class="progress-caption">85% of reviewers earn the full $750</div>
+    </div>
+
+    <a href="https://giftclick.org/aff_c?offer_id=1836&aff_id=181627" class="cta-btn" style="text-decoration:none; display:block;">Apply for the $750 Reviewers Gift Card</a>
+    <p class="cta-note">*Offer valid for qualified participants.</p>
+
+    <h2 class="section-title">How It Works</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="icon">✓</div>
+        <div>
+          <h3>Check Eligibility</h3>
+          <p>Answer a few simple questions to see if you qualify.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="icon">📦</div>
+        <div>
+          <h3>Review Products</h3>
+          <p>Try out selected products and share your honest opinion.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="icon">🎁</div>
+        <div>
+          <h3>Get Rewarded</h3>
+          <p>Receive your $750 SHEIN gift card upon completion.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://giftclick.org/aff_c?offer_id=1836&aff_id=181627" class="final-btn" style="text-decoration:none; display:flex;">Get Started Now →</a>
+
+  </div>
+</div>
+
+</body>
+</html>
